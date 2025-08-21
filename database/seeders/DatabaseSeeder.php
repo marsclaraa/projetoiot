@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Ambiente;
+use App\Models\Registro;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -15,7 +16,9 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            AmbienteSeeder::class
+            AmbienteSeeder::class,
+            SensorSeeder::class,
+            RegistroSeeder::class
         ]);
     }
 }

@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('tipo')->nullable(false);
             $table->string('descricao')->nullable();
             $table->boolean('status')->default(true);
-            
             $table->timestamps();
         });
     }
