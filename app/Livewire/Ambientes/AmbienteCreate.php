@@ -15,10 +15,16 @@ class AmbienteCreate extends Component
     protected $rules = [
     'nome' => 'required|string|max:100',
     'descricao'=> 'required',
-    'status'=> 'required',
+    'status'=>'required'
     ];
 
-     protected $messages = [];
+     protected $messages = [
+        'nome.required'=>'Este campo é obrigatório',
+        'nome.string'=>'Este campo não pode conter números',
+        'nome.max'=>'Você ultrapassou o limite de caracteries',
+        'descricao.required'=>'Este campo é obrigatório',
+        'status.required'=>'Este campo é obrigatório'
+    ];
         
 
     public function store()
@@ -35,6 +41,9 @@ class AmbienteCreate extends Component
         session()->flash('success', 'Cadastro Realizado');
 
         $this->reset(['nome','descricao','status']);
+
+        
+        return redirect()->route('dashboard');
     }
 
     public function render()

@@ -8,7 +8,7 @@
                 <h2 class="fw-bold" style="color: #2c2c2c;">Lista de Ambientes</h2>
             </div>
             <div class="col-md-6 text-end mt-2">
-                <a class="btn text-white rounded-pill shadow" style="background-color: primary"
+                <a class="btn text-white btn-primary rounded-pill shadow"
                     href="{{ route('ambiente.create') }}">
                     <i class="bi bi-plus-circle"></i> <strong>Novo Ambiente</strong>
                 </a>
@@ -16,7 +16,7 @@
         </div>
 
         <!-- Filtro e Paginação -->
-        <div class="card border-0 shadow-sm rounded-4" style="background-color: #c7e9ff;>
+        <div class="card border-0 shadow-sm rounded-4";>
             <div class="card-body">
 
                 <div class="row mb-4">
@@ -56,9 +56,9 @@
         
                                     <td>{{ $a->nome }}</td>
                                     <td>{{ $a->descricao}}</td>
-                                    <td>{{ $a->status }}</td>
+                                    <td>{{ $a->status == 1 ? "Ativo" : "Inativo" }}</td>
                                     <td>
-                                        <a href="{{ route('ambiente.edit', $a->id) }}"
+                                        <a href="{{ route('ambiente.edit', ['id' => $a->id]) }}"
                                             class="btn btn-sm btn-primary rounded-pill text-white fw-bold px-3 py-1">Editar</a>
 
 

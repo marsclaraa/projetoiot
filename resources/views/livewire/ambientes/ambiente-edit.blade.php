@@ -1,5 +1,3 @@
-
-
 <div>
  <div class="d-flex justify-content-center align-items-center mt-5">
     <div class="card shadow-sm" style="width: 100%; max-width: 600px;">
@@ -8,7 +6,7 @@
                 <i class="bi bi-plus-circle"></i> Atualizar Ambiente
             </h4>
 
-            <form wire:submit.prevent="atualizar">
+            <form wire:submit.prevent="edit">
                 
                 <div class="mb-3">
                     <label class="form-label"><strong> Nome:<strong></label>
@@ -41,11 +39,13 @@
             </br>
                 <div class="d-flex justify-content-between">
                     <button wire:click type="submit" class="btn btn-primary"
-                        wire:confirm = "Tem certeza que deseja cadastrar?">
+                        wire:confirm = "Tem certeza que deseja atualizar?">
                         <i class="bi bi-check-circle"></i> Atualizar Ambiente
                     </button>
                     </a>
                 </div>
+
+    
             </form>
         </div>
     </div>
