@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href={{ asset("css/style.css")}}>
 
     <title>{{ $title ?? 'Page Title' }}</title>
 </head>
@@ -28,7 +28,7 @@
 
             <nav class="nav flex-column px-2">
                 <a href="#" class="nav-link"><i class="bi bi-speedometer2"></i> Dashboard</a>
-                <a href="#" class="nav-link"><i class="bi bi-building"></i> Ambientes</a>
+                <a href="ambiente/list" class="nav-link"><i class="bi bi-building"></i> Ambientes</a>
                 <a href="#" class="nav-link"><i class="bi bi-people"></i> Usuários</a>
                 <a href="#" class="nav-link"><i class="bi bi-exclamation-triangle"></i> Alertas</a>
                 <a href="#" class="nav-link"><i class="bi bi-gear"></i>Configurações</a>
