@@ -8,9 +8,7 @@ use Livewire\WithPagination;
 
 class AmbienteList extends Component
 
-
 {
-
     use WithPagination;
 
     public $search = '';
@@ -27,16 +25,15 @@ class AmbienteList extends Component
             ->paginate($this->perPage);
 
 
-        return view('livewire.ambientes.ambiente-list',compact('ambiente'));
+        return view('livewire.ambientes.ambiente-list', compact('ambiente'));
     }
 
 
-    //deletar alunos
+    //deletar
     public function delete($id)
     {
         $ambiente = Ambiente::findOrFail($id);
         $ambiente->delete();
-        session()->flash('message', 'Aluno deletado com sucesso.');
+        session()->flash('message', 'Ambiente deletado com sucesso.');
     }
-
 }
