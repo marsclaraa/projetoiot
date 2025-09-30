@@ -25,4 +25,5 @@ Route::get('/ambiente/list', AmbienteList::class)->name('ambiente.list');
 Route::get('/sensor/create', SensorCreate::class)->name('sensor.create');
 Route::get('/sensor/{id}/edit', SensorEdit::class)->name('sensor.edit');
 Route::get('/sensor/list', SensorList::class)->name('sensor.list');
+
 Route::get('/registro/list', RegistroList::class)->name('registro.list');

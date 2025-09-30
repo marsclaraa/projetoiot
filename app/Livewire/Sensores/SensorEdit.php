@@ -45,7 +45,6 @@ class SensorEdit extends Component
     {
 
         $sensor = Sensor::findOrFail($id);
-
         $this->sensorId = $sensor->id;
         $this->ambiente_id = $sensor->ambiente_id;
         $this->codigo = $sensor->codigo;
