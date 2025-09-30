@@ -26,8 +26,8 @@
                     </div>
                     <div class="col-md-3">
                         <select wire:model.live="perPage" class="form-select rounded-pill">
-                            <option value="10">10 por página</option>
-                            <option value="25">25 por página</option>
+                            <option value="10">15 por página</option>
+                            <option value="25">30 por página</option>
                             <option value="50">50 por página</option>
                             <option value="100">100 por página</option>
                         </select>
