@@ -4,8 +4,10 @@ use App\Livewire\Ambientes\AmbienteCreate;
 use App\Livewire\Ambientes\AmbienteEdit;
 use App\Livewire\Ambientes\AmbienteList;
 use App\Livewire\Dashboard;
+use App\Livewire\Registros\RegistroList;
 use App\Livewire\Sensores\SensorCreate;
 use App\Models\Ambiente;
+use App\Models\Registro;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/dashboard', Dashboard::class)->name('dashboard');
@@ -18,3 +20,4 @@ Route::get('/ambiente/{id}/edit', AmbienteEdit::class)->name('ambiente.edit');
 
 Route::get('/ambiente/list', AmbienteList::class)->name('ambiente.list');
 
+Route::get('/registro/list', RegistroList::class)->name('registro.list');
