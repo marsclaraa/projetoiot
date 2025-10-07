@@ -9,22 +9,27 @@ use Illuminate\Http\Request;
 
 class RegistroController extends Controller
 {
-    public function store (RegistroRequest $request){
+    public function store(RegistroRequest $request)
+    {
 
- $sensor = Sensor::where('codigo', 'like'. $request->codigo)->first();
-if($sensor == null){
-    return response()->json([
-        'status' =>false,
-        'message' => 'nao foi possivel'
-    ]);
-}
+        $sensor = Sensor::where('codigo', '=', $request->cod_sensor)->first(); //first pega o primeiro registro de acordo com a coluna código
+        if ($sensor == null) {
+            return response()->json(['error' => 'sensor não encontrado'], 404);
+        }
         $registro = Registro::create([
-            'sensor_id' => $request-> sensor_id,
-            'valor'=> $request->valor,
-            'unidade'=> $request-> unidade,
-            'data_hora'=>$request -> data_hora,
+            'sensor_id' => $sensor->id,
+            'valor' => $request->valor,
+            'unidade' => $request->unidade,
+            'data_hora' => now() //pega a data hora deste momento
         ]);
-        return $registro;
+        return response()->json([
+            'success' => 'registro salvo com sucesso',
+            'data' => $registro
+        ], 201);
     }
 
+    // public function index(){
+    //     $registros = Registro::orderBy('id','desc')->get();
+    //     return response()->json()
+    // }
 }
