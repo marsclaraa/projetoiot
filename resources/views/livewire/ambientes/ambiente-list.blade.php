@@ -22,7 +22,7 @@
                 <div class="row mb-4">
                     <div class="col-md-6">
                         <input type="text" wire:model.debounce.300ms="search" class="form-control rounded-pill"
-                          id="search"  placeholder="Buscar Ambientes..." wire:model.live="search">
+                          id="search"  placeholder="Buscar Ambientes por nome..." wire:model.live="search">
                     </div>
                     <div class="col-md-3">
                         <select wire:model.live="perPage" class="form-select rounded-pill">
