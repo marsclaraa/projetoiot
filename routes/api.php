@@ -8,5 +8,5 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::post('/registro/controller', [RegistroController::class, "store"]);
+Route::post('/registro/create', [RegistroController::class, "store"]);
 
