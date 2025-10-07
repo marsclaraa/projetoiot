@@ -26,8 +26,8 @@
                     </div>
                     <div class="col-md-3">
                         <select wire:model.live="perPage" class="form-select rounded-pill">
-                            <option value="10">10 por página</option>
-                            <option value="25">25 por página</option>
+                            <option value="10">15 por página</option>
+                            <option value="25">30 por página</option>
                             <option value="50">50 por página</option>
                             <option value="100">100 por página</option>
                         </select>
@@ -58,11 +58,9 @@
                                     <td>{{ $a->descricao}}</td>
                                     <td>{{ $a->status == 1 ? "Ativo" : "Inativo" }}</td>
                                     <td>
-                                        <a href="{{ route('ambiente.edit', ['id' => $a->id]) }}"
+                                            <a href="{{ route('ambiente.edit',  $a->id)}}"
                                             class="btn btn-sm btn-primary rounded-pill text-white fw-bold px-3 py-1">Editar</a>
-
-
-
+                                          
                                         <button wire:click="delete({{ $a->id }})"
                                             onclick="return confirm('Tem certeza que deseja deletar?')"
                                             class="btn btn-sm btn-secondary rounded-pill text-white fw-bold px-3 py-1">Deletar</button>
@@ -78,6 +76,10 @@
                 </div>
 
             </div>
+            
+        </div>
+        <div class="mt-3">
+            {{$a->links()}}
         </div>
     </div>
 </div>

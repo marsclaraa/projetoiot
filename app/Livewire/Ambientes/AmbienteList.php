@@ -22,10 +22,13 @@ class AmbienteList extends Component
     public function render()
     {
         $ambiente = Ambiente::where('nome', 'like', "%{$this->search}%")
-            ->paginate($this->perPage);
+        ->orwhere('descricao', 'like', "%{$this->search}%")
+         ->orwhere('status', 'like', "%{$this->search}%")
+        ->paginate($this->perPage);
 
 
         return view('livewire.ambientes.ambiente-list', compact('ambiente'));
+         return $this->redirect('/ambiente/{id}/edit', navigate: true);
     }
 
 

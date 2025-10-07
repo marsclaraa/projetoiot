@@ -36,8 +36,8 @@ class SensorEdit extends Component
         'tipo.required' => 'Este campo é obrigatório',
         'descricao.required' => 'Este campo é obrigatório',
         'status.required' => 'Este campo é obrigatório'
-    ];
 
+    ];
 
     public function mount($id)
     {

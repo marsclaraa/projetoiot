@@ -40,7 +40,7 @@
                 <div class="d-flex justify-content-between">
                     <button wire:click type="submit" class="btn btn-primary"
                         wire:confirm = "Tem certeza que deseja atualizar?">
-                        <i class="bi bi-check-circle"></i> Atualizar Ambiente
+                        <i class="bi bi-check-circle"></i> Atualizar 
                     </button>
                     </a>
                 </div>

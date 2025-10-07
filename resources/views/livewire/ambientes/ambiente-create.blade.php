@@ -41,8 +41,7 @@
                 <div class="d-flex justify-content-between">
                     <button wire:click type="submit" class="btn btn-primary"
                         wire:confirm = "Tem certeza que deseja cadastrar?">
-                        <i class="bi bi-check-circle"></i> Cadastrar Ambiente
-                    </button>
+                        <i class="bi bi-check-circle"></i> Cadastrar 
                     </a>
                 </div>
             </form>
