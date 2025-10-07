@@ -16,8 +16,8 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            AmbienteSeeder::class,
-            SensorSeeder::class,
+            // AmbienteSeeder::class,
+            // SensorSeeder::class,
             RegistroSeeder::class
         ]);
     }

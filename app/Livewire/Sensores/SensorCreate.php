@@ -52,7 +52,8 @@ class SensorCreate extends Component
 
         $this->reset(['codigo', 'tipo', 'descricao', 'status']);
 
-        return redirect()->route('dashboard');
+        return redirect()->route('sensor.list');
+
     }
 
 

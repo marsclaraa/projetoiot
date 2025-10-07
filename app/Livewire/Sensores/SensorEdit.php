@@ -39,8 +39,6 @@ class SensorEdit extends Component
 
     ];
 
-
-
     public function mount($id)
     {
 

@@ -43,7 +43,7 @@ class AmbienteCreate extends Component
         $this->reset(['nome','descricao','status']);
 
         
-        return redirect()->route('dashboard');
+        return redirect()->route('ambiente.list');
     }
 
     public function render()
