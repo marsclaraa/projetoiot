@@ -62,4 +62,4 @@ class SensorCreate extends Component
         $ambientes = Ambiente::all();
         return view('livewire.sensores.sensor-create',compact('ambientes'));
     }
-}
+} 

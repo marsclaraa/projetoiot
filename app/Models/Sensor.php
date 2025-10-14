@@ -14,7 +14,7 @@ class Sensor extends Model
         'codigo',
         'tipo',
         'descricao',
-        'status'
+        'status' 
     ];
 
     public function registros(){

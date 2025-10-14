@@ -63,12 +63,16 @@
                                         <a href="{{ route('sensor.edit', ['id' => $s->id]) }}"
                                             class="btn btn-sm btn-primary rounded-pill text-white fw-bold px-3 py-1">Editar</a>
 
-
-
                                         <button wire:click="delete({{ $s->id }})"
                                             onclick="return confirm('Tem certeza que deseja deletar?')"
                                             class="btn btn-sm btn-secondary rounded-pill text-white fw-bold px-3 py-1">Deletar</button>
-                                    </td>
+                                     <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                                        <label class="form-check-label" for="flexSwitchCheckDefault">On/Off</label>
+                                    </div>
+                            
+                                        </td>
+                                    
                                 </tr>
                             @empty
                                 <tr>
