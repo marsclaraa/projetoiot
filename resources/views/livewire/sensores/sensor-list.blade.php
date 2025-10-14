@@ -42,9 +42,9 @@
                 <!-- Tabela -->
                 <div class="table-responsive">
                     <table class="table text-center align-middle" style="background-color: #5e5e5e;">
-                        <thead class= "background-color: #f0b923; color: black;">
+                     <thead class= "background-color: #f0b923; color: black;">
                             <tr>
-                                <th>CÓDIGO</th>
+                                   <th>CÓDIGO</th>
                                 <th>TIPO</th>
                                 <th>DESCRIÇÃO</th>
                                 <th>STATUS</th>
