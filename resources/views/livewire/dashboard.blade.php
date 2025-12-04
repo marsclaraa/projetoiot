@@ -77,10 +77,14 @@
                 <div class="card-header bg-white">
                     <h6 class="mb-0">Sensores por Tipo</h6>
                 </div>
-                <div class="card-body">  
+                <div class="card-body">
                     <canvas id="graficoSensores" height="200"></canvas>
                 </div>
             </div>
+        </div>
+        <div class="col-md-5">
+            <button wire:click="logout" class="p-2 text-center btn btn-sm btn-outline-primary" href="login">Logout
+            </button>
         </div>
     </div>
 </div>

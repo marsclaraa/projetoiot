@@ -3,7 +3,7 @@
 namespace App\Livewire\Sensores;
 
 use App\Models\Sensor;
-use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Http; 
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -14,7 +14,7 @@ class SensorList extends Component
     public $search = '';
     public $perPage = 15;
 
-    public $esp32Ip = 'http://10.137.11.217'; // Altere para o IP do seu ESP32
+    // public $esp32Ip = 'http://10.137.11.217'; 
 
     protected $queryString = [
         'search' => ['except' => ''],
@@ -30,44 +30,44 @@ class SensorList extends Component
           ->orwhere('status', 'like', "%{$this->search}%")
         ->paginate($this->perPage);
 
- $this->resetPage(); // para resetar a paginação (opcional)
-            return view('livewire.sensores.sensor-list',compact('sensor'));
-
+        
+        return view('livewire.sensores.sensor-list', compact('sensor'));
     }
 
-    public function toggleLed($id)
-{
-    $sensor = Sensor::find($id);
 
-    if (!$sensor) {
-        session()->flash('led_error', 'Sensor não encontrado.');
-        return;
-    }
+    public function toggleStatus($id)
+    {
+        $sensor = Sensor::find($id);
 
-    // Define a rota correta
-    $route = $sensor->status == 1 ? '/off' : '/on';
-    $url = $this->esp32Ip . $route;
-
-    try {
-        // Faz a requisição HTTP GET ao ESP32
-        $response = Http::timeout(5)->get($url);
-
-        if ($response->successful()) {
-            // Atualiza o status no banco
-            $sensor->status = $sensor->status == 1 ? 0 : 1;
-            $sensor->save();
-
-            $message = $sensor->status ? 'LED Ligado com sucesso!' : 'LED Desligado com sucesso!';
-            session()->flash('message', $message);
-        } else {
-            session()->flash('led_error', 'Falha ao comunicar com ESP32 (status HTTP: ' . $response->status() . ')');
+        if (!$sensor) {
+            session()->flash('led_error', 'Sensor não encontrado.');
+            return;
         }
-    } catch (\Exception $e) {
-        session()->flash('led_error', 'Erro de conexão com o ESP32: ' . $e->getMessage());
-    }
-}
 
-    //deletar alunos
+        
+        $route = $sensor->status == 1 ? '/off' : '/on';
+        $url = $this->esp32Ip . $route;
+
+        try {
+  
+            $response = Http::timeout(5)->get($url);
+
+            if ($response->successful()) {
+                $sensor->status = $sensor->status == 1 ? 0 : 1;
+                $sensor->save();
+
+                $message = $sensor->status ? 'Status alterado para ON com sucesso!' : 'Status alterado para OFF com sucesso!';
+                session()->flash('message', $message);
+            } else {
+                session()->flash('led_error', 'Falha ao comunicar com ESP32 (status HTTP: ' . $response->status() . ')');
+            }
+        } catch (\Exception $e) {
+    
+            session()->flash('led_error', 'Erro de conexão com o ESP32: ' . $e->getMessage());
+        }
+    }
+
+
     public function delete($id)
     {
         $sensor = Sensor::findOrFail($id);

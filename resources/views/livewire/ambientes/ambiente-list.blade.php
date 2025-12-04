@@ -79,7 +79,7 @@
             
         </div>
         <div class="mt-3">
-            {{$a->links()}}
+            {{-- {{$a->links()}} --}}
         </div>
     </div>
 </div>
